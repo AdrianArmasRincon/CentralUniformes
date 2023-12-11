@@ -285,12 +285,29 @@ Y las capturas de prueba son las siguientes:
 
 
 ### Pila-tecnológica
+Para descargar y utilizar el proyecto y la pila tecnológica, lo primero es clonar el repositorio y entrar al proyecto:
+  ```bash
+    git clone https://github.com/AdrianArmasRincon/CentralUniformes.git
+    cd CentralUniformes
+  ```
 <p>
   Para el frontend he utilizado Reactjs  
   <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> 
     <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="Reactjs" width="50" height="50"/> 
   </a>
 </p>
+
+Y para configurar e instalar React, lo primero que hay que hacer es descargar [Node.js](https://nodejs.org/en).
+A continuación, deberas ir al frontend e instalar las dependencias.
+```bash
+  cd frontend
+  npm install
+```
+
+Para iniciar el frontend, hay que meterse a él y poner este comando (se abrirá en http://localhost:3000):
+```bash
+  npm start
+```
 
 <p>
   Para el backend he utilizado Laravel
@@ -299,6 +316,20 @@ Y las capturas de prueba son las siguientes:
   </a>
 </p>
 
+Y para configurar e instalar Laravel, hay que descargar [Composer](https://getcomposer.org/download/).
+A continuación, deberás ir al backend e instalar composer.
+```bash
+  cd backend
+  composer install
+  cp .env.example .env
+  php artisan key:generate
+```
+Edita el archivo .env con la configuración de tu base de datos.
+
+Para iniciar el backend, deberás meterte a él e introducir este comando:
+```bash
+  php artisan serve
+```
 <p>
   Como ORM he utilizado Eloquent de Laravel
  <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> 
