@@ -25,15 +25,17 @@
         </ul>
          <li><a href="#Diagramas-y-justificación-del-modelo-de-datos">Diagramas y justificación del modelo de datos</a></li>
         <ul>
-           <li><a href="#Resumen"></a></li>
+           <li><a href="#Resumen">Resumen</a></li>
+           <li><a href="#Diagramas">Diagramas</a></li>
+          <ul>
+            <li><a href="#Entidad-relación">Entidad relación</a></li>
+            <li><a href="#Diagrama-de-clases">Diagrama de clases</a></li>
+          </ul>
         </ul>
       </ul>
+      <li>
+      <a href="#Requisitos-de-usuario">Requisitos de usuario</a>
     </li>
-    <li>
-      <a href="#PostMan">PostMan</a>
-    </li>
-    <li>
-      <a href="#contact">Contact</a>
     </li>
   </ol>
 </details>
