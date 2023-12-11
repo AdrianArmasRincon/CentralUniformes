@@ -45,6 +45,13 @@
            <li><a href="#Diseño-Inicial">Diseño inicial</a></li>
            <li><a href="#Usabilidad-y-accesibilidad">Usabilidad y accesibilidad</a></li>
         </ul>
+         <li><a href="#Manuales">Manuales</a></li>
+        <li><a href="#Test-de-prueba ">Test de prueba</a></li>
+        <li><a href="#Pila-tecnológica">Pila tecnológica</a></li>
+        <li><a href="#Repositorios">Repositorios</a></li>
+        <li><a href="#Planificación">Planificación</a></li>
+        <li><a href="#Conclusiones">Conclusiones</a></li> 
+        <li><a href="#Enlaces-y-referencias">Enlaces y referencias</a></li>  
       </ul>
     </li>
   </ol>
