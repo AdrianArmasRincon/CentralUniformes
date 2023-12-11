@@ -19,9 +19,6 @@
            <li><a href="#¿Para-qué-empresa-se-desarrolla?">¿Para qué empresa se desarrolla?</a></li>
            <li><a href="#¿En-qué-consiste-el-proyecto?">¿En qué consiste el proyecto?</a></li>
            <li><a href="#Otro">Otro</a></li>
-          <ul>
-            <li><a href="#Diagrama-de-casos-de-uso">Diagrama de casos de uso</a></li>
-          </ul>
         </ul>
          <li><a href="#Diagramas-y-justificación-del-modelo-de-datos">Diagramas y justificación del modelo de datos</a></li>
         <ul>
@@ -33,8 +30,21 @@
           </ul>
         </ul>
         <li>
-      <a href="#Requisitos-de-usuario">Requisitos de usuario</a>
-    </li>
+          <a href="#Requisitos-de-usuario">Requisitos de usuario</a>
+        </li>
+        <li>
+          <a href="#Casos-de-uso">Casos de uso</a>
+        </li>
+        <li>
+          <a href="#Funcionamiento">Funcionamiento</a>
+        </li>
+         <li>
+          <a href="#Interfaces">Interfaces</a>
+        </li>
+        <ul> 
+           <li><a href="#Diseño-Inicial">Diseño inicial</a></li>
+           <li><a href="#Usabilidad-y-accesibilidad">Usabilidad y accesibilidad</a></li>
+        </ul>
       </ul>
     </li>
   </ol>
@@ -64,8 +74,7 @@ Se desarrolla para la empresa Central Uniformes, una empresa líder en la venta 
 El proyecto consiste en un portal para su intranet que permita accede a los usuarios de la empresa a diferentes aplicaciones a las que tienen permiso mediante un enlace.
 
 ## Otro
-# Diagrama-de-casos-de-uso
-![UseCaseDiagramCentralUniformes](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/c47f03be-34e2-40d6-8020-dc1b42270bdb)
+
 
 
 En estas aplicaciones habrá un menú lateral que contendrá los enlaces de dichas aplicaciones. Este menú será gestionable por un rol de administrador que podrá añadir/borrar/modificar las entradas del menú y dar permiso a los usuarios que tienen acceso a ellas, además el portal deberá mostrar información sobre cada aplicación, siendo esta una imágen, título, descrición y enlace, que será gestionable por el administrador.
@@ -253,8 +262,62 @@ Create tables:
 ### Requisitos-de-usuario
 
 
+### Casos-de-uso
+Este es el diagrama que define los casos de uso del sistema:
+![UseCaseDiagramCentralUniformes](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/c47f03be-34e2-40d6-8020-dc1b42270bdb)
+
+### Funcionamiento
+
+### Interfaces
+## Diseño-Inicial
+El diseño de la interfaz la he realizado en Figma, una herramienta de diseño de aplicaciones, haz click [Aquí](https://www.figma.com/file/a9WsPZAvFzBYSJ3IYo0i4r/Central-uniformes?type=design&node-id=0%3A1&mode=design&t=4GP51U1oCj83aGM6-1) para ver la interfaz en funcionamiento y su diseño.
+
+## Usabilidad-y-accesibilidad
+Hacer parte de Pino con la ayuda en su módulo
+
+### Manuales
 
 
+### Test-de-prueba 
+El test de prueba lo hice en el frontend, el código es el siguiente:
 
+Y las capturas de prueba son las siguientes:
+
+
+### Pila-tecnológica
+<p>
+  Para el frontend he utilizado Reactjs  
+  <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> 
+    <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" alt="Reactjs" width="40" height="40"/> 
+  </a>
+</p>
+
+<p>
+  Para el backend he utilizado Laravel
+   <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> 
+    <img src="https://www.vectorlogo.zone/logos/laravel/laravel-ar21.svg" alt="Reactjs" width="40" height="40"/> 
+  </a>
+</p>
+
+<p>
+  Como ORM he utilizado Eloquent de Laravel
+ <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> 
+    <img src="https://www.vectorlogo.zone/logos/laravel/laravel-ar21.svg" alt="Reactjs" width="40" height="40"/> 
+  </a>
+</p>
+
+<p>
+  Como base de datos he utilizado MySQL
+   <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> 
+    <img src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg" alt="Reactjs" width="40" height="40"/> 
+  </a>
+</p>
+### Repositorios
+
+### Planificación
+
+### Conclusiones
+
+### Enlaces-y-referencias
 
 
