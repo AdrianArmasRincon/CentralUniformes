@@ -103,37 +103,37 @@ New tiene los siguientes atributos:
 <p>  image             file  Not Null,</p>
   
 Module tiene los siguientes atributos:
-  module_id        Integer(10)  Unique Auto_increment  Primary_Key,
-  name             varchar(255) Not Null,
-  rol              varchar(255) Not Null,
-  Column           Integer(10)  Not Null,
+<p>  module_id        Integer(10)  Unique Auto_increment  Primary_Key,
+<p>  name             varchar(255) Not Null,</p>
+<p>  rol              varchar(255) Not Null,</p>
+<p>  Column           Integer(10)  Not Null,</p>
 
 Rol tiene los siguientes atributos:
-  rol_id           Integer(10)  Unique Auto_increment  Primary_Key,
-  name             varchar(255) Not Null
+<p>  rol_id           Integer(10)  Unique Auto_increment  Primary_Key,
+<p>  name             varchar(255) Not Null</p>
 
 Customer tiene los siguientes atributos:
-  customer_id      Integer(10)  Unique Auto_increment  Primary_Key,
-  fullName         varchar(255) Not Null,
-  email            varchar(255) Not Null,
-  password         varchar(255) Not Null
+<p>  customer_id      Integer(10)  Unique Auto_increment  Primary_Key,
+<p>  fullName         varchar(255) Not Null,</p>
+<p>  email            varchar(255) Not Null,</p>
+<p>  password         varchar(255) Not Null</p>
 
 Admin tiene los siguientes atributos:
-  admin_id         Integer(10)  Unique Auto_increment  Primary_Key,
-  fullName         varchar(255) Not Null,
-  email            varchar(255) Not Null,
-  password         varchar(255) Not Null,
-  Rol_id           Integer(10)  Not Null Foreign_Key references Rol(rol_id)
+<p>  admin_id         Integer(10)  Unique Auto_increment  Primary_Key,
+<p>  fullName         varchar(255) Not Null,</p>
+<p>  email            varchar(255) Not Null,</p>
+<p>  password         varchar(255) Not Null,</p>
+<p>  Rol_id           Integer(10)  Not Null Foreign_Key references Rol(rol_id)</p>
 
 La tabla intermedia Cutomer_Rol debido a la relación muchos a muchos entre Customer y Rol, tiene los siguientes atributos:
-  customerRolId    Integer(10)  Unique Auto_increment  Primary_Key,
-  crrol_id         Integer(10)  Not Null,
-  crcustomer_id    Integer(10)  Not Null
+<p>  customerRolId    Integer(10)  Unique Auto_increment  Primary_Key,</p>
+<p>  crrol_id         Integer(10)  Not Null,</p>
+<p>  crcustomer_id    Integer(10)  Not Null</p>
 
 La tabla intermedia Module_Rol debido a la relación muchos a muchos entre Module y Rol, tiene los siguientes atributos:
-  moduleRolId     Integer(10)  Unique Auto_increment  Primary_Key,
-  crrol_id        Integer(10)  Not Null,
-  crmodule_id     Integer(10)  Not Null
+<p>  moduleRolId     Integer(10)  Unique Auto_increment  Primary_Key,</p>
+<p>  crrol_id        Integer(10)  Not Null,</p>
+<p>  crmodule_id     Integer(10)  Not Null</p>
 
 Las tablas estás relacionadas entre sí de la siguiente manera:
 Admin y Rol están relacionadas uno a uno, mientrasque Rol y Module, y Rol Customer, están relacionadas muchos a muchos entre sí.
