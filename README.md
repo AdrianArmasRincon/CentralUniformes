@@ -15,15 +15,15 @@
       <ul>
         <li><a href="#Sobre-el-proyecto">Sobre el proyecto</a></li>
         <ul>
-          <a href="#¿De-dónde-surje-la-necesidad?">¿De dónde surje la necesidad?</a>
-          <a href="#¿Para-qué-empresa-se-desarrolla?">¿Para qué empresa se desarrolla?</a>
-          <a href="#¿En-qué-consiste-el-proyecto?">¿En qué consiste el proyecto?</a>
-          <a href="#Otro">Otro</a>
+           <li><a href="#¿De-dónde-surje-la-necesidad?">¿De dónde surje la necesidad?</a></li>
+           <li><a href="#¿Para-qué-empresa-se-desarrolla?">¿Para qué empresa se desarrolla?</a></li>
+           <li><a href="#¿En-qué-consiste-el-proyecto?">¿En qué consiste el proyecto?</a></li>
+           <li><a href="#Otro">Otro</a></li>
           <ul>
-            <a href="#Diagrama-de-casos-de-uso">Diagrama de casos de uso</a>
+            <li><a href="#Diagrama-de-casos-de-uso">Diagrama de casos de uso</a></li>
           </ul>
         </ul>
-         <a href="#Diagramas-y-justificación-del-modelo-de-datos">Diagramas y justificación del modelo de datos</a>
+         <li><a href="#Diagramas-y-justificación-del-modelo-de-datos">Diagramas y justificación del modelo de datos</a></li>
         <ul>
            <li><a href="#Resumen"></a></li>
         </ul>
