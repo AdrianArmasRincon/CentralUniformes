@@ -32,10 +32,10 @@
             <li><a href="#Diagrama-de-clases">Diagrama de clases</a></li>
           </ul>
         </ul>
-      </ul>
-      <li>
+        <li>
       <a href="#Requisitos-de-usuario">Requisitos de usuario</a>
     </li>
+      </ul>
     </li>
   </ol>
 </details>
