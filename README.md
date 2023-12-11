@@ -96,13 +96,11 @@ En esta documentación se va a explicar las tablas generadas y la relación entr
 
 las entidades de esta base de datos son; Module; Rol; Admin; New y Customer.
 
-<p> 
 New tiene los siguientes atributos:
-  new_id            Integer(10)  Unique Auto_increment  Primary_Key,
-  title             varchar(255) Not Null,
-  text              varchar(500) Not Null,
-  image             file  Not Null,
-</p>
+<p>  new_id            Integer(10)  Unique Auto_increment  Primary_Key,</p>
+<p>  title             varchar(255) Not Null,</p>
+<p>  text              varchar(500) Not Null,</p>
+<p>  image             file  Not Null,</p>
   
 Module tiene los siguientes atributos:
   module_id        Integer(10)  Unique Auto_increment  Primary_Key,
