@@ -23,7 +23,7 @@
             <a href="#Diagrama-de-casos-de-uso">Diagrama de casos de uso</a>
           </ul>
         </ul>
-         <li><a href="#Diagramas-y-justificación-del-modelo-de-datos">Diagramas y justificación del modelo de datos</a></li>
+         <a href="#Diagramas-y-justificación-del-modelo-de-datos">Diagramas y justificación del modelo de datos</a>
         <ul>
            <li><a href="#Resumen"></a></li>
         </ul>
