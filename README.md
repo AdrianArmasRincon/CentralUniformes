@@ -288,28 +288,28 @@ Y las capturas de prueba son las siguientes:
 <p>
   Para el frontend he utilizado Reactjs  
   <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> 
-    <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" alt="Reactjs" width="400" height="50"/> 
+    <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="Reactjs" width="50" height="50"/> 
   </a>
 </p>
 
 <p>
   Para el backend he utilizado Laravel
    <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> 
-    <img src="https://www.vectorlogo.zone/logos/laravel/laravel-ar21.svg" alt="Reactjs" width="400" height="50"/> 
+    <img src="https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg" alt="Reactjs" width="50" height="50"/> 
   </a>
 </p>
 
 <p>
   Como ORM he utilizado Eloquent de Laravel
  <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> 
-    <img src="https://www.vectorlogo.zone/logos/laravel/laravel-ar21.svg" alt="Reactjs" width="400" height="50"/> 
+    <img src="https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg" alt="Reactjs" width="50" height="50"/> 
   </a>
 </p>
 
 <p>
   Como base de datos he utilizado MySQL
    <a href="https://ionicframework.com" target="_blank" rel="noreferrer"> 
-    <img src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg" alt="Reactjs" width="400" height="50"/> 
+    <img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="Reactjs" width="50" height="50"/> 
   </a>
 </p>
 ### Repositorios
