@@ -92,136 +92,108 @@ En esta documentación se va a explicar las tablas generadas y la relación entr
 
 ## Diagramas
 # Entidad-relación
-![erdCentralUniformes](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/afca52ea-9fac-4629-9edd-a2f045c65546)
+![Entity Relationship diagram](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/bf1a6bb0-d2a8-4bf4-8250-733a59225e74)
 
-las entidades de esta base de datos son; Module; Rol; Admin; New y Customer.
 
-New tiene los siguientes atributos:
-<p>  new_id            Integer(10)  Unique Auto_increment  Primary_Key,</p>
-<p>  title             varchar(255) Not Null,</p>
-<p>  text              varchar(500) Not Null,</p>
-<p>  image             file  Not Null,</p>
+las entidades de esta base de datos son; Apps; Roles; User y News.
+
+News tiene los siguientes atributos:
+  id                Integer(10)  Unique Auto_increment  Primary_Key,<br/>
+  title             varchar(255) Not Null,<br/>
+  content           varchar(500) Not Null,<br/>
+  image             file  Not Null,<br/>
   
-Module tiene los siguientes atributos:
-<p>  module_id        Integer(10)  Unique Auto_increment  Primary_Key,
-<p>  name             varchar(255) Not Null,</p>
-<p>  rol              varchar(255) Not Null,</p>
-<p>  Column           Integer(10)  Not Null,</p>
+Apps tiene los siguientes atributos:
+  id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
+  icon             varchar(255) Not Null,<br/>
+  URL              varchar(255) Not Null,<br/>
 
-Rol tiene los siguientes atributos:
-<p>  rol_id           Integer(10)  Unique Auto_increment  Primary_Key,
-<p>  name             varchar(255) Not Null</p>
+Roles tiene los siguientes atributos:
+  id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
+  name             varchar(255) Not Null<br/>
 
-Customer tiene los siguientes atributos:
-<p>  customer_id      Integer(10)  Unique Auto_increment  Primary_Key,
-<p>  fullName         varchar(255) Not Null,</p>
-<p>  email            varchar(255) Not Null,</p>
-<p>  password         varchar(255) Not Null</p>
+User tiene los siguientes atributos:
+  id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
+  name             varchar(255) Not Null,<br/>
+  email            varchar(255) Not Null,<br/>
+  password         varchar(255) Not Null<br/>
 
-Admin tiene los siguientes atributos:
-<p>  admin_id         Integer(10)  Unique Auto_increment  Primary_Key,
-<p>  fullName         varchar(255) Not Null,</p>
-<p>  email            varchar(255) Not Null,</p>
-<p>  password         varchar(255) Not Null,</p>
-<p>  Rol_id           Integer(10)  Not Null Foreign_Key references Rol(rol_id)</p>
+La tabla intermedia rol_app debido a la relación muchos a muchos entre Roles y Apps, tiene los siguientes atributos:
+  id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
+  Rol_id           Integer(10)  Not Null Foreign_Key references Rol(id)<br/>
+  app_id           Integer(10)  Not Null Foreign_Key references Apps(id)<br/>
 
-La tabla intermedia Cutomer_Rol debido a la relación muchos a muchos entre Customer y Rol, tiene los siguientes atributos:
-<p>  customerRolId    Integer(10)  Unique Auto_increment  Primary_Key,</p>
-<p>  crrol_id         Integer(10)  Not Null,</p>
-<p>  crcustomer_id    Integer(10)  Not Null</p>
+La tabla intermedia rol_user debido a la relación muchos a muchos entre Roles y Users, tiene los siguientes atributos:
+  id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
+  Rol_id           Integer(10)  Not Null Foreign_Key references Rol(id)<br/>
+  app_id           Integer(10)  Not Null Foreign_Key references User(id)<br/>
 
-La tabla intermedia Module_Rol debido a la relación muchos a muchos entre Module y Rol, tiene los siguientes atributos:
-<p>  moduleRolId     Integer(10)  Unique Auto_increment  Primary_Key,</p>
-<p>  crrol_id        Integer(10)  Not Null,</p>
-<p>  crmodule_id     Integer(10)  Not Null</p>
 
 Las tablas estás relacionadas entre sí de la siguiente manera:
-Admin y Rol están relacionadas uno a uno, mientrasque Rol y Module, y Rol Customer, están relacionadas muchos a muchos entre sí.
+Roles y Apps están relacionadas muchos a muchos, y Roles y User, están relacionadas muchos a muchos entre sí también, mientras que news es una tabla no relacionada.
 
 
 # Diagrama-de-clases
-![classDiaCentralUniformes](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/dc26f17a-74d6-47ca-aed5-884c857ecaa5)
+![cdCU](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/cde8858c-9ae7-4852-bfcc-8d7a3363503e)
 
-Entidades son Admin; Module; Rol; New y Customer.
+
+Entidades son User; App; Rol y New.
 
 New tiene los siguientes atributos:
-  -new_id            Integer(10)  Unique Auto_increment  Primary_Key,
-  -title             varchar(255) Not Null,
-  -text              varchar(500) Not Null,
-  -image             file  Not Null,
+  -new_id            Integer(10)  Unique Auto_increment  Primary_Key,<br/>
+  -title             varchar(255) Not Null,<br/>
+  -content           varchar(500) Not Null,<br/>
+  -image             file  Not Null,<br/>
 
 New tiene los siguientes métodos:
+  +addNew();
   +getNew();
+  +updateNew();
+  +deleteNew();
   
-Module tiene los siguientes atributos:
-  -module_id        Integer(10)  Unique Auto_increment  Primary_Key,
-  -name             varchar(255) Not Null,
-  -rol              varchar(255) Not Null,
-  -Column           Integer(10)  Not Null,
+App tiene los siguientes atributos:
+  -id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
+  -icon             varchar(255) Not Null,<br/>
+  -url              varchar(255) Not Null,<br/>
   
-Module tiene los siguientes métodos:
-  +getModule();
+App tiene los siguientes métodos:
+  +addApp();
+  +getApp();
+  +updatepp();
+  +deleteApp();
   
 Rol tiene los siguientes atributos:
-  -rol_id           Integer(10)  Unique Auto_increment  Primary_Key,
+  -id               Integer(10)  Unique Auto_increment  Primary_Key,
   -name             varchar(255) Not Null
   
 Rol tiene los siguientes métodos:
+  addRol();
   getRol();
+  updateRol();
+  deleteRol();
   
-Customer tiene los siguientes atributos:
-  -customer_id      Integer(10)  Unique Auto_increment  Primary_Key,
-  -fullName         varchar(255) Not Null,
+User tiene los siguientes atributos:
+  -id               Integer(10)  Unique Auto_increment  Primary_Key,
+  -name             varchar(255) Not Null,
   -email            varchar(255) Not Null,
   -password         varchar(255) Not Null
 
-Customer tiene los siguientes métodos:
+User tiene los siguientes métodos:
   +register();
   +logIn();
-  +updateCustomer();
-  
-Admin tiene los siguientes atributos:
-  -admin_id         Integer(10)  Unique Auto_increment  Primary_Key,
-  -fullName         varchar(255) Not Null,
-  -email            varchar(255) Not Null,
-  -password         varchar(255) Not Null,
-  -Rol_id           Integer(10)  Not Null Foreign_Key references Rol(rol_id)
-
-Admin tiene los siguientes métodos:
-  +logIn();
-  +getNew();
-  +addNew();
-  +updateNew();
-  +deleteNew();
-  +getRol();
-  +addRol();
-  +updateRol();
-  +deleteRol();
-  +getCustomer();
+  +logout();
   +addCustomer();
+  +getCustomer();
   +updateCustomer();
   +deleteCustomer();
-  +getModule();
-  +addModule();
-  +updateModule();
-  +deleteModule();
+
   
-La tabla intermedia Cutomer_Rol debido a la relación muchos a muchos entre Customer y Rol, tiene los siguientes atributos:
-  -customerRolId    Integer(10)  Unique Auto_increment  Primary_Key,
-  -crrol_id         Integer(10)  Not Null,
-  -crcustomer_id    Integer(10)  Not Null
+  # ORM
+  ![ORM Diagram](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/46edecb1-7471-4524-acbb-cc7dad6352a5)
 
-La tabla intermedia Cutomer_Rol debido a la relación muchos a muchos entre Customer y Rol, tiene los siguientes atributos:
-  -customerRolId    Integer(10)  Unique Auto_increment  Primary_Key,
-  -crrol_id         Integer(10)  Not Null,
-  -crcustomer_id    Integer(10)  Not Null
 
-La tabla intermedia Module_Rol debido a la relación muchos a muchos entre Module y Rol, tiene los siguientes atributos:
-  -moduleRolId     Integer(10)  Unique Auto_increment  Primary_Key,
-  -crrol_id        Integer(10)  Not Null,
-  -crmodule_id     Integer(10)  Not Null
 #SQL
-
+La base de datos se crea automaticamente al hacer un migrate de laravel, pero este es el código equivalente:
 Create database:
 ```sh
   CREATE DATABASE db_centraluniformes;
@@ -229,42 +201,39 @@ Create database:
 ```
 Create tables:
 ```sh
-  CREATE TABLE Role (
-      roleId INT PRIMARY KEY,
-      name VARCHAR(100) NOT NULL
-  );
+  CREATE TABLE apps (
+    id int not null primary key auto_increment,
+    icon varchar(255) not null,
+    url varchar(255) not null
+);
 
-  CREATE TABLE admin (
-    adminId INT PRIMARY KEY AUTO_INCREMENT,
-    fullname VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    password VARCHAR(100) NOT NULL,
-    Roleid INT NOT NULL,
-    FOREIGN KEY (Roleid) REFERENCES Role(roleId) ON DELETE CASCADE ON UPDATE CASCADE
-  );
+CREATE TABLE roles (
+    id int not null primary key auto_increment,
+    name varchar(255) not null
+);
 
-  CREATE TABLE module (
-    moduleid INT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    role VARCHAR(100) NOT NULL,
-    roleid INT NOT NULL,
-    FOREIGN KEY (roleid) REFERENCES Role(roleId) ON DELETE CASCADE ON UPDATE CASCADE
-  );
+CREATE TABLE users (
+    id int not null primary key auto_increment,
+    name varchar(255) not null,
+    email varchar(255) not null,
+    password varchar(255) not null
+);
 
-  CREATE TABLE customer (
-    customerId INT PRIMARY KEY,
-    fullName VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    password VARCHAR(100) NOT NULL,
-    username VARCHAR(100) NOT NULL
-  );
+CREATE TABLE role_apps (
+    id int not null primary key auto_increment,
+    apps_id int not null,
+    role_id int not null,
+    foreign key (apps_id) references apps(id),
+    foreign key (role_id) references roles(id)
+);
 
-  CREATE TABLE customer_Role (
-    customerid INT NOT NULL,
-    roleid INT NOT NULL,
-    FOREIGN KEY (customerid) REFERENCES customer(customerId) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (roleid) REFERENCES Role(roleId) ON DELETE CASCADE ON UPDATE CASCADE
-  );
+CREATE TABLE user_roles (
+    id int not null primary key auto_increment,
+    user_id int not null,
+    role_id int not null,
+    foreign key (user_id) references users(id),
+    foreign key (role_id) references roles(id)
+);
 ```
 ### Requisitos-de-usuario
 
@@ -283,7 +252,7 @@ El diseño de la interfaz la he realizado en Figma, una herramienta de diseño d
 Hacer parte de Pino con la ayuda en su módulo
 
 ### Manuales
-
+## Manual de usuario
 
 ### Test-de-prueba 
 El test de prueba lo hice en el frontend, el código es el siguiente:
