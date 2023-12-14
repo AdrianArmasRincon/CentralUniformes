@@ -400,7 +400,7 @@ I also have error control that makes it easier for the user to enter input requi
 
 
 # Manuals
-## Manual de usuario
+## User manual
 The user manual is located in the public folder of the frontend, and is accessed from the following button:
 ######################################### PONER IMAGEN BOTÓN para el manual de usuario
 ![user manual](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/c3f56ea5-7627-4f0e-ba4b-ab8bcc069caa)
