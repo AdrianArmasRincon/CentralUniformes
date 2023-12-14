@@ -236,20 +236,92 @@ CREATE TABLE user_roles (
 );
 ```
 ### Requisitos-de-usuario
+El presente apartado tiene como objetivo definir los requisitos de usuario para el desarrollo de la aplicación de intranet de Central Uniformes, abarca los requisitos funcionales y no funcionales de la intranet, destinada a mejorar la eficiencia y la colaboración interna en Central Uniformes.
 
+Central Uniformes es una empresa líder en la fabricación y distribución de uniformes para diversos sectores, incluyendo servicios médicos, educación y empresas corporativas.
+La intranet se desarrollará para mejorar la comunicación interna entre las aplicacones de la empresa, la gestión de enlaces y usuarios y la colaboración entre los diferentes departamentos de Central Uniformes.
+
+Como tipos de usuarios encontramos el usuario administrador que tiene permitido acceder a home, modules, users y role, y gestionar los datos relacionados a estos, así como crear nuevas entradas de datos, y el usuario básico que tiene permitido el acceso a home y la capacidad de acceder a los enlaces básicos. Además de estos el administrador puede crear nuevos roles para los usuarios el cual permite modificar el acceso individual de cada uno a un determinado área, pero no modificar los datos.
+
+Como requisitos funcionales, los usuarios deberán registrarse bajo credenciales seguras, además la aplicación cuenta con menús intuitivos y accesibles para cada tipo de usuario y una barra de búsqueda que facilita la búsqueda de información, en cuanto a la gestión de contenidos, podemos encontrar una subida y descarga segura de datos y archivos cuyo acceso está basado en roles.
+
+Como requisitos no funcionales tenemos la velocidad de carga que no es mayor a 3 segundos, la seguridad de encriptación y contraseñas robustas, la compatibilidad entre navegadores y el diseño responsive entre tablet, movil y pc. Además tiene una buena escalabilidad debido a que al permitir crear modulos, roles y usuarios, crecerá y se adptará con el uso de la empresa. 
 
 ### Casos-de-uso
 Este es el diagrama que define los casos de uso del sistema:
 ![UseCaseDiagramCentralUniformes](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/c47f03be-34e2-40d6-8020-dc1b42270bdb)
+En este diagrama podemos ver que todos los usuarios pueden ver la vista general y sus módulos asociados anteriormente por el usuario administrador, mientras que el administrador puede gestionar, crear, modificar y eliminar permisos, usuarios y aplicaciones.
 
 ### Funcionamiento
+La aplicación de intranet de Central Uniformes está diseñada para mejorar la eficiencia operativa y la colaboración interna. El sistema consta de una aplicación web. Aquí se describe el funcionamiento general: 
+El inicio de sesión se realizará a traves de la aplicación, y se ha implementado un sistema de inicio de sesión seguro con autenticación de dos factores para garantizar la seguridad, todo esto a través de una interfa de usuario intuitiva y menús de usuario personalizados a cada uno con sus entradas relacionadasa.
+El acceso a documentos estará controlado por roles, garantizando la privacidad y seguridad de la información.
+
+En cuanto a las espicificaciones técnicas, se ha desarrollado en un entorno en la nube para facilitar la accesibilidad desde cualquier ubicación, se han utilizado tecnologías modernas y de gran capacidad para asegurar la actualización futura y seguridad de esta. El almacenamiento se realiza en MySQL una de las tecnnologías mas seguras de bases de datos. Además hay protocolos de seguridad básicos para garantizar la seguridad de los usuarios.
+##############################################################PONER ELEMENTO VISUAL QUE JUSTIFIQUE LO ANTERIOR
 
 ### Interfaces
 ## Diseño-Inicial
 El diseño de la interfaz la he realizado en Figma, una herramienta de diseño de aplicaciones, haz click [Aquí](https://www.figma.com/file/a9WsPZAvFzBYSJ3IYo0i4r/Central-uniformes?type=design&node-id=0%3A1&mode=design&t=4GP51U1oCj83aGM6-1) para ver la interfaz en funcionamiento y su diseño.
 
 ## Usabilidad-y-accesibilidad
-Hacer parte de Pino con la ayuda en su módulo
+# Usabilidad
+Tras realizar la implementación de la aplicación, he procedido a estudiar sus aspectos de usbilidad y son los siguientes:
+
+La interfaz resulta atractiva debido a su simplicidad, homogeneidad y la implementación de colores de la empresa, lo que facilita la identidad de su marca, así como la atracción del usuario debido a sus colores suaves y su diseño minimalista.
+  ![1](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/c145f1ca-32af-43ef-ae89-a5f30f3ab741)
+
+Además de esto, cuenta con un menu simple basado en iconos para no saturar de informaciónal usuario:
+  ![2](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/0e8b7cb8-a94d-4650-9643-273d90c1533d)
+
+Los iconos también resultan homogéneos con el diseño de la empresa debido a que predominan las curvas:
+  ![3](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/d40feb28-0b2c-4a00-a14f-ac4969b9e6bc)
+
+En cuanto a los botones, tienen un diseño redondeado y con los colores de la empresa, lo que fortalece la identidad de la marca y la familiaridad para el usuario:
+  ![4](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/57f42dc8-dd72-4a77-878e-4a83c9c6d5f8)
+
+El apartado de noticias busca resaltar a la vista del usuario y ser una manera intuitiva y atractiva para el usuario, por lo que he decidido hacer un carousel de imágenes y texto que se redirigen a la noticia a través de un botón:
+  ![5](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/35f7c6ac-e9cf-4692-a211-3041ce54c42a)
+
+En la versión de móvil y tablet he decidido ocultar las imágenes para mejorar la experiencia de usuario y simplificar la vista y no saturar la pantalla de información debido a su tamaño reducido:
+  ![6](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/6aea4cb9-d5da-440f-bda1-25966bf1ce74)
+
+En la versión de móvil he decidido ocultar el icono superior del login para mejorar la experiencia de usuario y simplificar la vista, ya que este dato también se encuentra en el menú lateral:
+  ![7](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/ac9a2219-055d-4ef2-90ee-1b739b40ec1b)
+
+En la versión estandar para la empresa según se nos ha solicitado, que es la de pc, destacan los iconos de login y logout con la información del estado de manera llamativa por el estado del icono:
+  ![8logout](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/8c172ab3-bdd0-45bf-9c40-3ff612fadc24)
+  ![8login](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/081f8f45-aadb-499a-a0b8-0a726e18b420)
+
+También hay un elemento bastante llamativo, que es la barra de filtrado de datos, la cual coincide con el resto del diseo homogéneo:
+  ![9bb](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/889d61ea-a942-4788-a6e9-880b0be28c3d)
+
+Hay otros elementos de diseño menos notorios, pero que favorecen la experiencia de usuario, tales como el nav dentro del carousel, el cual es homogéneo y ayuda al usuario a ver la infirmación deseada:
+  ![10](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/13fdbaab-5f6a-4334-8ce9-52b243de5f0b)
+
+Otro elemento diseñado para facilitar la experiencia favorable del usuario es que la barra lateral permanece oculta en el login y register para no llenar la pantalla con información no relevante para el usuario en ese proceso, en cambio se ha cambiado por un icono más simple que redirige a home:
+  ![11](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/240a3291-983e-4c0c-b936-1c13d9d9dcdc)
+
+En cuanto a la experiencia del administrador, podemos encontrar el diseño de formularios, que es intuitivo y continua con el estilo de diseño:
+  ![12](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/b2ad3b57-d39a-4bce-9f2c-d0d740775eaf)
+
+El boton de log out, puede comunicar ideas de forma más rápida y estética al usuario, aumentando la
+eficiencia del sistema:
+  ![13](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/a39e4f96-00db-48e4-9c4e-50f79b3b77a3)
+
+La fuente de la aplicación favorece el entendimiento de la jerarquía y al equilibrio y la interacción entre los distintos caracteres de la pantalla:
+  ![14](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/b806ff8c-08e9-4632-b190-e28c2174bd01)
+
+  
+# Accesibilidad 
+En cuanto al estudio de la accesibilidad, podemos encontrar lo siguiente:
+
+El texto es adecuado a la resolución de la pantalla y varía dependiendo de esta, podemos verlo en la imágen, como no pone px, si no que tamaño, este varía al cambiar la resolución:
+![15](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/0535d20a-72ac-4e5a-928c-85cece8d49ba)
+
+El tamaño de los iconos cambia dependiendo de la resolución de la pantalla, ya que modifica el porcentaje del tamaño de la barra lateral que se rellena, además, la barra varía según el ancho de la pantalla:
+![16](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/6c6a600c-8031-4d9e-9680-a19f295c9af2)
+
 
 ### Manuales
 ## Manual de usuario
