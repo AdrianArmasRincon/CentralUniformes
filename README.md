@@ -52,7 +52,7 @@
         <li><a href="#Conclusions">Conclusions</a></li> 
       </ul>
     </li>
-<!--     <li>
+    <li>
       <a href="#Readme-Esp">Readme en español</a>
       <ul>
         <li><a href="#Sobre-el-proyecto">Sobre el proyecto</a></li>
@@ -98,7 +98,7 @@
         <li><a href="#Repositorios">Repositorios</a></li>
         <li><a href="#Planificación">Planificación</a></li>
         <li><a href="#Conclusiones">Conclusiones</a></li> 
-      </ul> -->
+      </ul>
     </li>
   </ol>
 </details>
