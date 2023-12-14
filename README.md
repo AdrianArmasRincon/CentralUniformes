@@ -4,12 +4,12 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
+<!--     <li>
       <a href="#Readme-Eng">Readme on English</a>
       <ul>
         <li><a href="#About-the-project">About theproject</a></li>
       </ul>
-    </li>
+    </li> -->
     <li>
       <a href="#Readme-Esp">Readme en español</a>
       <ul>
@@ -81,10 +81,7 @@ Se desarrolla para la empresa Central Uniformes, una empresa líder en la venta 
 El proyecto consiste en un portal para su intranet que permita accede a los usuarios de la empresa a diferentes aplicaciones a las que tienen permiso mediante un enlace.
 
 ## Otro
-
-
-
-En estas aplicaciones habrá un menú lateral que contendrá los enlaces de dichas aplicaciones. Este menú será gestionable por un rol de administrador que podrá añadir/borrar/modificar las entradas del menú y dar permiso a los usuarios que tienen acceso a ellas, además el portal deberá mostrar información sobre cada aplicación, siendo esta una imágen, título, descrición y enlace, que será gestionable por el administrador.
+En estas aplicaciones habrá un menú lateral que contendrá los enlaces de dichas aplicaciones. Este menú será gestionable por un rol de administrador que podrá añadir/borrar/modificar las entradas del menú y dar permiso a los usuarios que tienen acceso a ellas, además el portal deberá mostrar información sobre cada aplicación, siendo esta una imagen, título, descrición y enlace, que será gestionable por el administrador.
 
 ### Diagramas-y-justificación-del-modelo-de-datos 
 ## Resumen 
@@ -96,38 +93,43 @@ En esta documentación se va a explicar las tablas generadas y la relación entr
 
 
 las entidades de esta base de datos son; Apps; Roles; User y News.
-
+~~~
 News tiene los siguientes atributos:
-  id                Integer(10)  Unique Auto_increment  Primary_Key,<br/>
-  title             varchar(255) Not Null,<br/>
-  content           varchar(500) Not Null,<br/>
-  image             file  Not Null,<br/>
-  
+  id                Integer(10)  Unique Auto_increment  Primary_Key,
+  title             varchar(255) Not Null,
+  content           varchar(500) Not Null,
+  image             file  Not Null,
+~~~
+~~~
 Apps tiene los siguientes atributos:
-  id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
-  icon             varchar(255) Not Null,<br/>
-  URL              varchar(255) Not Null,<br/>
-
+  id               Integer(10)  Unique Auto_increment  Primary_Key,
+  icon             varchar(255) Not Null,
+  URL              varchar(255) Not Null,
+~~~
+~~~
 Roles tiene los siguientes atributos:
-  id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
-  name             varchar(255) Not Null<br/>
-
+  id               Integer(10)  Unique Auto_increment  Primary_Key,
+  name             varchar(255) Not Null
+~~~
+~~~
 User tiene los siguientes atributos:
-  id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
-  name             varchar(255) Not Null,<br/>
-  email            varchar(255) Not Null,<br/>
-  password         varchar(255) Not Null<br/>
-
+  id               Integer(10)  Unique Auto_increment  Primary_Key,
+  name             varchar(255) Not Null,
+  email            varchar(255) Not Null,
+  password         varchar(255) Not Null
+~~~
+~~~
 La tabla intermedia rol_app debido a la relación muchos a muchos entre Roles y Apps, tiene los siguientes atributos:
-  id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
-  Rol_id           Integer(10)  Not Null Foreign_Key references Rol(id)<br/>
-  app_id           Integer(10)  Not Null Foreign_Key references Apps(id)<br/>
-
+  id               Integer(10)  Unique Auto_increment  Primary_Key,
+  Rol_id           Integer(10)  Not Null Foreign_Key references Rol(id)
+  app_id           Integer(10)  Not Null Foreign_Key references Apps(id)
+~~~
+~~~
 La tabla intermedia rol_user debido a la relación muchos a muchos entre Roles y Users, tiene los siguientes atributos:
-  id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
-  Rol_id           Integer(10)  Not Null Foreign_Key references Rol(id)<br/>
-  app_id           Integer(10)  Not Null Foreign_Key references User(id)<br/>
-
+  id               Integer(10)  Unique Auto_increment  Primary_Key,
+  Rol_id           Integer(10)  Not Null Foreign_Key references Rol(id)
+  app_id           Integer(10)  Not Null Foreign_Key references User(id)
+~~~
 
 Las tablas estás relacionadas entre sí de la siguiente manera:
 Roles y Apps están relacionadas muchos a muchos, y Roles y User, están relacionadas muchos a muchos entre sí también, mientras que news es una tabla no relacionada.
@@ -138,46 +140,53 @@ Roles y Apps están relacionadas muchos a muchos, y Roles y User, están relacio
 
 
 Entidades son User; App; Rol y New.
-
+~~~
 New tiene los siguientes atributos:
-  -new_id            Integer(10)  Unique Auto_increment  Primary_Key,<br/>
-  -title             varchar(255) Not Null,<br/>
-  -content           varchar(500) Not Null,<br/>
-  -image             file  Not Null,<br/>
-
+  -new_id            Integer(10)  Unique Auto_increment  Primary_Key,
+  -title             varchar(255) Not Null,
+  -content           varchar(500) Not Null,
+  -image             file  Not Null,
+~~~
+~~~
 New tiene los siguientes métodos:
   +addNew();
   +getNew();
   +updateNew();
   +deleteNew();
-  
+~~~
+~~~
 App tiene los siguientes atributos:
-  -id               Integer(10)  Unique Auto_increment  Primary_Key,<br/>
-  -icon             varchar(255) Not Null,<br/>
-  -url              varchar(255) Not Null,<br/>
-  
+  -id               Integer(10)  Unique Auto_increment  Primary_Key,
+  -icon             varchar(255) Not Null,
+  -url              varchar(255) Not Null,
+~~~
+~~~
 App tiene los siguientes métodos:
   +addApp();
   +getApp();
   +updatepp();
   +deleteApp();
-  
+~~~
+~~~  
 Rol tiene los siguientes atributos:
   -id               Integer(10)  Unique Auto_increment  Primary_Key,
   -name             varchar(255) Not Null
-  
+~~~
+~~~ 
 Rol tiene los siguientes métodos:
-  addRol();
-  getRol();
-  updateRol();
-  deleteRol();
-  
+  +addRol();
+  +getRol();
+  +updateRol();
+  +deleteRol();
+~~~
+~~~  
 User tiene los siguientes atributos:
   -id               Integer(10)  Unique Auto_increment  Primary_Key,
   -name             varchar(255) Not Null,
   -email            varchar(255) Not Null,
   -password         varchar(255) Not Null
-
+~~~
+~~~
 User tiene los siguientes métodos:
   +register();
   +logIn();
@@ -186,7 +195,7 @@ User tiene los siguientes métodos:
   +getCustomer();
   +updateCustomer();
   +deleteCustomer();
-
+~~~
   
   # ORM
   ![ORM Diagram](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/46edecb1-7471-4524-acbb-cc7dad6352a5)
@@ -258,7 +267,11 @@ El inicio de sesión se realizará a traves de la aplicación, y se ha implement
 El acceso a documentos estará controlado por roles, garantizando la privacidad y seguridad de la información.
 
 En cuanto a las espicificaciones técnicas, se ha desarrollado en un entorno en la nube para facilitar la accesibilidad desde cualquier ubicación, se han utilizado tecnologías modernas y de gran capacidad para asegurar la actualización futura y seguridad de esta. El almacenamiento se realiza en MySQL una de las tecnnologías mas seguras de bases de datos. Además hay protocolos de seguridad básicos para garantizar la seguridad de los usuarios.
-##############################################################PONER ELEMENTO VISUAL QUE JUSTIFIQUE LO ANTERIOR
+
+La funcionalidad de la app se resume en las posibilidades del uso de las rutas:                                                                        
+![image](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/91c6cafa-739b-40ca-b024-1d8637e36609)
+Y el [postman](https://documenter.getpostman.com/view/29846283/2s9YkjB3zq)
+
 
 ### Interfaces
 ## Diseño-Inicial
@@ -271,32 +284,32 @@ Tras realizar la implementación de la aplicación, he procedido a estudiar sus 
 La interfaz resulta atractiva debido a su simplicidad, homogeneidad y la implementación de colores de la empresa, lo que facilita la identidad de su marca, así como la atracción del usuario debido a sus colores suaves y su diseño minimalista.
   ![1](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/c145f1ca-32af-43ef-ae89-a5f30f3ab741)
 
-Además de esto, cuenta con un menu simple basado en iconos para no saturar de informaciónal usuario:
+Además de esto, cuenta con un menu simple basado en iconos para no saturar de información al usuario:                                                                       
   ![2](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/0e8b7cb8-a94d-4650-9643-273d90c1533d)
 
-Los iconos también resultan homogéneos con el diseño de la empresa debido a que predominan las curvas:
+Los iconos también resultan homogéneos con el diseño de la empresa debido a que predominan las curvas:                                                                                            
   ![3](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/d40feb28-0b2c-4a00-a14f-ac4969b9e6bc)
 
-En cuanto a los botones, tienen un diseño redondeado y con los colores de la empresa, lo que fortalece la identidad de la marca y la familiaridad para el usuario:
+En cuanto a los botones, tienen un diseño redondeado y con los colores de la empresa, lo que fortalece la identidad de la marca y la familiaridad para el usuario:                                                 
   ![4](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/57f42dc8-dd72-4a77-878e-4a83c9c6d5f8)
 
-El apartado de noticias busca resaltar a la vista del usuario y ser una manera intuitiva y atractiva para el usuario, por lo que he decidido hacer un carousel de imágenes y texto que se redirigen a la noticia a través de un botón:
+El apartado de noticias busca resaltar a la vista del usuario y ser una manera intuitiva y atractiva para el usuario, por lo que he decidido hacer un carousel de imágenes y texto que se redirigen a la noticia a través de un botón:                           
   ![5](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/35f7c6ac-e9cf-4692-a211-3041ce54c42a)
 
-En la versión de móvil y tablet he decidido ocultar las imágenes para mejorar la experiencia de usuario y simplificar la vista y no saturar la pantalla de información debido a su tamaño reducido:
+En la versión de móvil y tablet he decidido ocultar las imágenes para mejorar la experiencia de usuario y simplificar la vista y no saturar la pantalla de información debido a su tamaño reducido:          
   ![6](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/6aea4cb9-d5da-440f-bda1-25966bf1ce74)
 
-En la versión de móvil he decidido ocultar el icono superior del login para mejorar la experiencia de usuario y simplificar la vista, ya que este dato también se encuentra en el menú lateral:
+En la versión de móvil he decidido ocultar el icono superior del login para mejorar la experiencia de usuario y simplificar la vista, ya que este dato también se encuentra en el menú lateral:              
   ![7](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/ac9a2219-055d-4ef2-90ee-1b739b40ec1b)
 
-En la versión estandar para la empresa según se nos ha solicitado, que es la de pc, destacan los iconos de login y logout con la información del estado de manera llamativa por el estado del icono:
+En la versión estandar para la empresa según se nos ha solicitado, que es la de pc, destacan los iconos de login y logout con la información del estado de manera llamativa por el estado del icono:              
   ![8logout](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/8c172ab3-bdd0-45bf-9c40-3ff612fadc24)
   ![8login](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/081f8f45-aadb-499a-a0b8-0a726e18b420)
 
-También hay un elemento bastante llamativo, que es la barra de filtrado de datos, la cual coincide con el resto del diseo homogéneo:
+También hay un elemento bastante llamativo, que es la barra de filtrado de datos, la cual coincide con el resto del diseo homogéneo:                  
   ![9bb](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/889d61ea-a942-4788-a6e9-880b0be28c3d)
 
-Hay otros elementos de diseño menos notorios, pero que favorecen la experiencia de usuario, tales como el nav dentro del carousel, el cual es homogéneo y ayuda al usuario a ver la infirmación deseada:
+Hay otros elementos de diseño menos notorios, pero que favorecen la experiencia de usuario, tales como el nav dentro del carousel, el cual es homogéneo y ayuda al usuario a ver la infirmación deseada:            
   ![10](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/13fdbaab-5f6a-4334-8ce9-52b243de5f0b)
 
 Otro elemento diseñado para facilitar la experiencia favorable del usuario es que la barra lateral permanece oculta en el login y register para no llenar la pantalla con información no relevante para el usuario en ese proceso, en cambio se ha cambiado por un icono más simple que redirige a home:
@@ -309,28 +322,52 @@ El boton de log out, puede comunicar ideas de forma más rápida y estética al 
 eficiencia del sistema:
   ![13](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/a39e4f96-00db-48e4-9c4e-50f79b3b77a3)
 
-La fuente de la aplicación favorece el entendimiento de la jerarquía y al equilibrio y la interacción entre los distintos caracteres de la pantalla:
+La fuente de la aplicación favorece el entendimiento de la jerarquía y al equilibrio y la interacción entre los distintos caracteres de la pantalla:                          
   ![14](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/b806ff8c-08e9-4632-b190-e28c2174bd01)
 
-  
+
+
+
 # Accesibilidad 
 En cuanto al estudio de la accesibilidad, podemos encontrar lo siguiente:
 
-El texto es adecuado a la resolución de la pantalla y varía dependiendo de esta, podemos verlo en la imágen, como no pone px, si no que tamaño, este varía al cambiar la resolución:
+El texto es adecuado a la resolución de la pantalla y varía dependiendo de esta, podemos verlo en la imagen, como no pone px, si no que tamaño, este varía al cambiar la resolución:                     
 ![15](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/0535d20a-72ac-4e5a-928c-85cece8d49ba)
 
-El tamaño de los iconos cambia dependiendo de la resolución de la pantalla, ya que modifica el porcentaje del tamaño de la barra lateral que se rellena, además, la barra varía según el ancho de la pantalla:
+El tamaño de los iconos cambia dependiendo de la resolución de la pantalla, ya que modifica el porcentaje del tamaño de la barra lateral que se rellena, además, la barra varía según el ancho de la pantalla:             
 ![16](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/6c6a600c-8031-4d9e-9680-a19f295c9af2)
+
+Otro aspecto de la accesibilidad es la etiqueta descriptiva de las imágenes, la cuál permite mediante aplicaciones saber que realiza el click de la imagen:                    
+![17](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/1fc61353-a631-46b9-98fc-a9865e6b947a)
+
+Un aspecto de accesibilidad podría ser el contraste de colores entre el  el texto y el fondo puede dificultar la lectura para personas con discapacidades visuales o cognitivas:                   
+![18](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/b3f17369-fbd1-42ca-bb6a-dd8e5a60c993)
+
+Además de esto, toda la aplicación se puede utilizar únicamente con el teclado, lo que favorece el uso para algunas personas con discapacidades motoras.                        
+![19](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/2c6e48d9-b17a-4c54-a2bf-c063a632a4bf)
+
+Los iconos de la aplicación tienen un gran tamaño y separación entre ellos para facilitar su uso a personas con enfermedades como el parkingson y similares:                          
+![20](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/be0577bb-aca8-475b-bf0f-da471c0af9bd)
+
+Los botones son grandes y están separados de otras opciones para asegurar su correcto uso a personas con discapacidades motoras:                      
+![21](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/b29ce5b5-b78a-4411-8ffa-ab96cc441c0b)
+
+Los inputs tienen un tamaño acorde y un espacio entre ellos para facilitar su uso ante discapacidades motoras:                           
+![image](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/e417d833-f112-4afd-99b7-780d22a96e43)
+
+También tengo control de errores que facilitan la introducción de los requisitos de los inputs para el usuario y que tenga un feedback sobre sus errores:                        
+![image](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/0bc6bbd8-2848-4588-9159-19bd6ec0d1ac)
 
 
 ### Manuales
 ## Manual de usuario
 
 ### Test-de-prueba 
-El test de prueba lo hice en el frontend, el código es el siguiente:
+El test de prueba lo hice en el backend, el código es el siguiente:
 
 Y las capturas de prueba son las siguientes:
 
+![test tdd](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/6395b5b9-70ad-436a-8453-275c3dd418a0)
 
 ### Pila-tecnológica
 Para descargar y utilizar el proyecto y la pila tecnológica, lo primero es clonar el repositorio y entrar al proyecto:
@@ -391,12 +428,16 @@ Para iniciar el backend, deberás meterte a él e introducir este comando:
     <img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="Reactjs" width="50" height="50"/> 
   </a>
 </p>
+
 ### Repositorios
+Este proyecto ha sido realizado por [Adrián Armas](https://github.com/AdrianArmasRincon) en el repositorio de git: [https://github.com/AdrianArmasRincon/CentralUniformes](https://
+github.com/AdrianArmasRincon/CentralUniformes)
+
+La prueba del backend es la siguiente: [https://documenter.getpostman.com/view/29846283/2s9YkjB3zq](https://documenter.getpostman.com/view/29846283/2s9YkjB3zq)
 
 ### Planificación
+Para la organización del proyecto he seguido la recomendación de la distribución de trabajo de [Tiburcio Cruz](https://github.com/tcrurav) y es la siguiente:
+![image](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/50d57767-9160-4453-ac67-eb6f43c38a93)
+
 
 ### Conclusiones
-
-### Enlaces-y-referencias
-
-
