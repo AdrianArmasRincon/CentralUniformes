@@ -27,6 +27,7 @@
           <ul>
             <li><a href="#Entidad-relación">Entidad relación</a></li>
             <li><a href="#Diagrama-de-clases">Diagrama de clases</a></li>
+            <li><a href="#ORM">ORM</a></li>
           </ul>
         </ul>
         <li>
@@ -44,29 +45,32 @@
         <ul> 
            <li><a href="#Diseño-Inicial">Diseño inicial</a></li>
            <li><a href="#Usabilidad-y-accesibilidad">Usabilidad y accesibilidad</a></li>
+          <ul>
+             <li><a href="#Usabilidad">Usabilidad</a></li>
+            <li><a href="#Accesibilidad">Accesibilidad</a></li>
+          </ul>
         </ul>
-         <li><a href="#Manuales">Manuales</a></li>
+        <li><a href="#Manuales">Manuales</a></li>
         <li><a href="#Test-de-prueba ">Test de prueba</a></li>
         <li><a href="#Pila-tecnológica">Pila tecnológica</a></li>
         <li><a href="#Repositorios">Repositorios</a></li>
         <li><a href="#Planificación">Planificación</a></li>
         <li><a href="#Conclusiones">Conclusiones</a></li> 
-        <li><a href="#Enlaces-y-referencias">Enlaces y referencias</a></li>  
       </ul>
     </li>
   </ol>
 </details>
 
 
-### Readme-Eng
-### About-the-project
+# Readme-Eng
+# About-the-project
 This project is made to 
 
 This project is made because of the neccesity of an intranet to redirect to their own apps with an user and access control to the enterprise Central Uniformes
 
 
-### Readme-Esp
-### Sobre-el-proyecto
+# Readme-Esp
+# Sobre-el-proyecto
 
 
 ## ¿De-dónde-surje-la-necesidad?
@@ -83,12 +87,12 @@ El proyecto consiste en un portal para su intranet que permita accede a los usua
 ## Otro
 En estas aplicaciones habrá un menú lateral que contendrá los enlaces de dichas aplicaciones. Este menú será gestionable por un rol de administrador que podrá añadir/borrar/modificar las entradas del menú y dar permiso a los usuarios que tienen acceso a ellas, además el portal deberá mostrar información sobre cada aplicación, siendo esta una imagen, título, descrición y enlace, que será gestionable por el administrador.
 
-### Diagramas-y-justificación-del-modelo-de-datos 
+# Diagramas-y-justificación-del-modelo-de-datos 
 ## Resumen 
 En esta documentación se va a explicar las tablas generadas y la relación entre ellas y sus atributos dadas las especificaciones pedidas por la empresa.
 
-## Diagramas
-# Entidad-relación
+# Diagramas
+## Entidad-relación
 ![Entity Relationship diagram](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/bf1a6bb0-d2a8-4bf4-8250-733a59225e74)
 
 
@@ -135,7 +139,7 @@ Las tablas estás relacionadas entre sí de la siguiente manera:
 Roles y Apps están relacionadas muchos a muchos, y Roles y User, están relacionadas muchos a muchos entre sí también, mientras que news es una tabla no relacionada.
 
 
-# Diagrama-de-clases
+### Diagrama-de-clases
 ![cdCU](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/cde8858c-9ae7-4852-bfcc-8d7a3363503e)
 
 
@@ -197,7 +201,7 @@ User tiene los siguientes métodos:
   +deleteCustomer();
 ~~~
   
-  # ORM
+  ### ORM
   ![ORM Diagram](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/46edecb1-7471-4524-acbb-cc7dad6352a5)
 
 
@@ -244,7 +248,10 @@ CREATE TABLE user_roles (
     foreign key (role_id) references roles(id)
 );
 ```
-### Requisitos-de-usuario
+Pruebas del backend en el [informe del Postman](https://documenter.getpostman.com/view/29846283/2s9YkjB3zq)
+
+
+# Requisitos-de-usuario
 El presente apartado tiene como objetivo definir los requisitos de usuario para el desarrollo de la aplicación de intranet de Central Uniformes, abarca los requisitos funcionales y no funcionales de la intranet, destinada a mejorar la eficiencia y la colaboración interna en Central Uniformes.
 
 Central Uniformes es una empresa líder en la fabricación y distribución de uniformes para diversos sectores, incluyendo servicios médicos, educación y empresas corporativas.
@@ -256,12 +263,12 @@ Como requisitos funcionales, los usuarios deberán registrarse bajo credenciales
 
 Como requisitos no funcionales tenemos la velocidad de carga que no es mayor a 3 segundos, la seguridad de encriptación y contraseñas robustas, la compatibilidad entre navegadores y el diseño responsive entre tablet, movil y pc. Además tiene una buena escalabilidad debido a que al permitir crear modulos, roles y usuarios, crecerá y se adptará con el uso de la empresa. 
 
-### Casos-de-uso
+# Casos-de-uso
 Este es el diagrama que define los casos de uso del sistema:
 ![UseCaseDiagramCentralUniformes](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/c47f03be-34e2-40d6-8020-dc1b42270bdb)
 En este diagrama podemos ver que todos los usuarios pueden ver la vista general y sus módulos asociados anteriormente por el usuario administrador, mientras que el administrador puede gestionar, crear, modificar y eliminar permisos, usuarios y aplicaciones.
 
-### Funcionamiento
+# Funcionamiento
 La aplicación de intranet de Central Uniformes está diseñada para mejorar la eficiencia operativa y la colaboración interna. El sistema consta de una aplicación web. Aquí se describe el funcionamiento general: 
 El inicio de sesión se realizará a traves de la aplicación, y se ha implementado un sistema de inicio de sesión seguro con autenticación de dos factores para garantizar la seguridad, todo esto a través de una interfa de usuario intuitiva y menús de usuario personalizados a cada uno con sus entradas relacionadasa.
 El acceso a documentos estará controlado por roles, garantizando la privacidad y seguridad de la información.
@@ -273,12 +280,12 @@ La funcionalidad de la app se resume en las posibilidades del uso de las rutas:
 Y el [postman](https://documenter.getpostman.com/view/29846283/2s9YkjB3zq)
 
 
-### Interfaces
+# Interfaces
 ## Diseño-Inicial
 El diseño de la interfaz la he realizado en Figma, una herramienta de diseño de aplicaciones, haz click [Aquí](https://www.figma.com/file/a9WsPZAvFzBYSJ3IYo0i4r/Central-uniformes?type=design&node-id=0%3A1&mode=design&t=4GP51U1oCj83aGM6-1) para ver la interfaz en funcionamiento y su diseño.
 
 ## Usabilidad-y-accesibilidad
-# Usabilidad
+### Usabilidad
 Tras realizar la implementación de la aplicación, he procedido a estudiar sus aspectos de usbilidad y son los siguientes:
 
 La interfaz resulta atractiva debido a su simplicidad, homogeneidad y la implementación de colores de la empresa, lo que facilita la identidad de su marca, así como la atracción del usuario debido a sus colores suaves y su diseño minimalista.
@@ -326,9 +333,7 @@ La fuente de la aplicación favorece el entendimiento de la jerarquía y al equi
   ![14](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/b806ff8c-08e9-4632-b190-e28c2174bd01)
 
 
-
-
-# Accesibilidad 
+### Accesibilidad 
 En cuanto al estudio de la accesibilidad, podemos encontrar lo siguiente:
 
 El texto es adecuado a la resolución de la pantalla y varía dependiendo de esta, podemos verlo en la imagen, como no pone px, si no que tamaño, este varía al cambiar la resolución:                     
@@ -359,17 +364,21 @@ También tengo control de errores que facilitan la introducción de los requisit
 ![image](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/0bc6bbd8-2848-4588-9159-19bd6ec0d1ac)
 
 
-### Manuales
+# Manuales
 ## Manual de usuario
+El manual de usuario se encuentra en la carpeta public del frontend, y se accede desde el siguiente botón:
+######################################### PONER IMAGEN BOTÓN para el manual de usuario
+![user manual](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/c3f56ea5-7627-4f0e-ba4b-ab8bcc069caa)
 
-### Test-de-prueba 
+
+# Test-de-prueba 
 El test de prueba lo hice en el backend, el código es el siguiente:
 
 Y las capturas de prueba son las siguientes:
 
 ![test tdd](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/6395b5b9-70ad-436a-8453-275c3dd418a0)
 
-### Pila-tecnológica
+# Pila-tecnológica
 Para descargar y utilizar el proyecto y la pila tecnológica, lo primero es clonar el repositorio y entrar al proyecto:
   ```bash
     git clone https://github.com/AdrianArmasRincon/CentralUniformes.git
@@ -429,15 +438,15 @@ Para iniciar el backend, deberás meterte a él e introducir este comando:
   </a>
 </p>
 
-### Repositorios
+# Repositorios
 Este proyecto ha sido realizado por [Adrián Armas](https://github.com/AdrianArmasRincon) en el repositorio de git: [https://github.com/AdrianArmasRincon/CentralUniformes](https://
 github.com/AdrianArmasRincon/CentralUniformes)
 
 La prueba del backend es la siguiente: [https://documenter.getpostman.com/view/29846283/2s9YkjB3zq](https://documenter.getpostman.com/view/29846283/2s9YkjB3zq)
 
-### Planificación
+# Planificación
 Para la organización del proyecto he seguido la recomendación de la distribución de trabajo de [Tiburcio Cruz](https://github.com/tcrurav) y es la siguiente:
 ![image](https://github.com/AdrianArmasRincon/CentralUniformes/assets/146866842/50d57767-9160-4453-ac67-eb6f43c38a93)
 
 
-### Conclusiones
+# Conclusiones
