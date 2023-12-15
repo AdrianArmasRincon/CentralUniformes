@@ -106,6 +106,20 @@
 
 # Readme-Eng
 # About-the-project
+## Web-apps
+Web apps, native apps, and hybrid apps each have their own set of advantages and disadvantages. The choice between them depends on few factors, including the specific requirements of the project, target audience, and development resources. Here's a comparison of web apps with native and hybrid.
+
+In this case we have choosen web apps, but why?
+Because they have Cross-Platform Compatibility, Web apps are accessible through web browsers on various devices, making them compatible with multiple platforms.
+Users don´t have to install the app to access to it, as in natives and hybrid case.
+It is easier to update, because are instantly available to all users as they are implemented on the server side, eliminating the need for users to download and install updates.
+And Web apps are often more cost-effective to develop and maintain because they share a single codebase for all platforms.
+
+But it has disadventages too and those are few of them:
+Limited Device Access, web apps may not have full access to device-specific features as native apps do.
+Web apps may have slightly slower performance compared to native apps, because they are not done to an specific hardware and software.
+And web apps may not perform as well as native apps in offline mode, like natives.
+
 
 ## Where-does-the-need-arise-from?
 This project is made to help the access and management of users, roles and links of a company, to facilitate both the management and use of the intranet and its apps.
@@ -180,7 +194,7 @@ Roles and Apps are many-to-many related, and Roles and User are many-to-many rel
 The entities are User; App; Role and New.
 ~~~
 New has the following attributes:
-  -new_id            Integer(10)  Unique Auto_increment  Primary_Key,
+  -id                Integer(10)  Unique Auto_increment  Primary_Key,
   -title             varchar(255) Not Null,
   -content           varchar(500) Not Null,
   -image             file  Not Null,
@@ -247,7 +261,7 @@ Create database:
   USE db_centraluniformes;
 ```
 Create tables:
-```sh
+```
   CREATE TABLE apps (
     id int not null primary key auto_increment,
     icon varchar(255) not null,
@@ -412,7 +426,7 @@ I did the test test in the backend, the code and result is as follows:
 
 # technology-stack
 To download and use the project and the technology stack, the first thing is to clone the repository and enter the project:
-  ```bash
+  ```ba
     git clone https://github.com/AdrianArmasRincon/CentralUniformes.git
     cd CentralUniformes
   ```
